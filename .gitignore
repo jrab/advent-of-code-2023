@@ -1,0 +1,116 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+word-add-in/dist
+outlook-expert-network/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+build/
+dll/
+
+# dependencies
+/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+apps/te-ui/word-add-in/node_modules
+apps/te-ui/outlook-expert-network/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.angular/
+.vscode/*
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+.history/*
+# !.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-workspace
+!.vscode/te-mono-ui.code-workspace
+!.vscode/po-ui.code-workspace
+
+# misc
+/.angular/cache
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+package-lock.json
+yarn-error.log
+report.*.json
+stats.json
+*.orig
+/.yarn/*
+.yarnrc.yml
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+/e2e/report
+
+# reporting
+/report
+
+# System Files
+.DS_Store
+Thumbs.db
+
+*.swp
+# environmental values
+.env
+/environment.ts
+/environment.js
+
+# graphql plugin for intellij
+graphql.config.json
+
+# bin directory
+/bin/server.*
+
+# editorconfig
+.editorconfig
+
+# atlas auto-generated schema file
+src/app/shared/atlas/schema.json
+**/src/environment.js
+
+# atlas types
+src/types/atlas/client/index.d.ts
+
+protractor-screenshot.*.png
+
+# deployment slug
+deployment-slug.zip
+
+# sonar scanner output
+/.scannerwork
+
+# nx graph
+graph.json
+
+#playwright - e2e testing framework auth
+playwright/.auth
+
+#LambdaTest Ignore File
+.hyperexecute/azcopy.exe
+hyperexecute.exe
+hyperexecute-cli.log
+.updatedhyperexecute.yaml
+hyperexecute-code*.zip
