@@ -257,4 +257,4 @@ console.log(
 getLeastFinalLocation()
 // getLeastFinalLocation([19,21,46])
 );
-//# sourceMappingURL=day-5_2.js.map
+//# sourceMappingURL=day-5.js.map

@@ -3,9 +3,9 @@ const getGameResult = (gameResult) => {
     const greenMatch = /([0-9]+) (?:green)/ig.exec(gameResult);
     const blueMatch = /([0-9]+) (?:blue)/ig.exec(gameResult);
     return {
-        red: (redMatch === null || redMatch === void 0 ? void 0 : redMatch.length) > 0 && parseInt(redMatch[1]) || 0,
-        green: (greenMatch === null || greenMatch === void 0 ? void 0 : greenMatch.length) > 0 && parseInt(greenMatch[1]) || 0,
-        blue: (blueMatch === null || blueMatch === void 0 ? void 0 : blueMatch.length) > 0 && parseInt(blueMatch[1]) || 0
+        red: redMatch?.length > 0 && parseInt(redMatch[1]) || 0,
+        green: greenMatch?.length > 0 && parseInt(greenMatch[1]) || 0,
+        blue: blueMatch?.length > 0 && parseInt(blueMatch[1]) || 0
     };
 };
 const loadGames = (gameList) => {
@@ -16,7 +16,10 @@ const loadGames = (gameList) => {
     }).reduce((state, game) => {
         const [, gameNumber] = game.gameInfo.split(' ');
         const gameResultsList = game.gameResults.split('; ');
-        return Object.assign(Object.assign({}, state), { [parseInt(gameNumber)]: gameResultsList.map(getGameResult) });
+        return {
+            ...state,
+            [parseInt(gameNumber)]: gameResultsList.map(getGameResult)
+        };
     }, {});
 };
 const validateRound = (round, availableCubes) => {
@@ -41,7 +44,10 @@ const getMaxColorsPerGame = (games) => {
         // console.log('gameResults',gameResults)
         // get max of each color
         const maxColors = getMaxColors(gameResults);
-        return Object.assign(Object.assign({}, state), { [gameId]: [maxColors] });
+        return {
+            ...state,
+            [gameId]: [maxColors]
+        };
     }, {});
 };
 const validateGames = (games, availableCubes) => {
@@ -52,7 +58,10 @@ const validateGames = (games, availableCubes) => {
         // get max of each color
         const validRounds = gameResults.filter(round => validateRound(round, availableCubes));
         if (validRounds.length === gameResults.length) {
-            return Object.assign(Object.assign({}, state), { [gameId]: validRounds });
+            return {
+                ...state,
+                [gameId]: validRounds
+            };
         }
         return state;
     }, {});

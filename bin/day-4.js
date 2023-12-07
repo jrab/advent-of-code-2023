@@ -45,7 +45,10 @@ const generateClonedCardsAndEvaluate = (games) => {
 };
 const processWinningNumbers = (games) => {
     return games.map((game) => processWinningNumbersForGame(game)).reduce((state, num, index) => {
-        return Object.assign(Object.assign({}, state), { [index + 1]: num });
+        return {
+            ...state,
+            [index + 1]: num
+        };
     }, {});
 };
 const cardGames = `Card   1: 99 46 62 92 60 37 52 56 41 31 | 83 40 31 33 46  3 10 39 82  8 64 35  5 63 60 72 48 87 11 81 95 34 97 37 99
