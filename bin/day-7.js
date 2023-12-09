@@ -64,8 +64,7 @@ const loadCards = (list) => {
     const listArray = list.split('\n');
     return listArray.map((item) => {
         const [cards, bet] = item.trim().split(' ');
-        const maxRank = null; // (cards === 'JJJJJ') ? 7 : getHighestRankingFromWildcard(cards.split(''));
-        // console.log(`Finished ${cards} at ${maxRank}`);
+        const maxRank = null;
         return ({
             cards: cards.split(''),
             bet: parseInt(bet, 10),
